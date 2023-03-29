@@ -288,7 +288,7 @@ int main()
 	setlocale(LC_ALL, "Russian");
 
 	string str = "";
-	int number = NULL;
+	int number = 0;
 	NumberAsString X;
 
 	while (true)
@@ -317,19 +317,21 @@ int main()
 		{
 		}
 
-		if (number != NULL)
+		if (number != 0)
 		{
 			X.Set(str);
-			number = NULL;
+			number = 0;
 			X.PrintString();
 
 			cout << "Выход - Q, ввести число заново - R" << endl;
 			cin >> str;
+			system("clear");
 			system("cls");
 		}
 
 		if (str == "R" || str == "r")
 		{
+			system("clear");
 			system("cls");
 		}
 		if (str == "Q" || str == "q")
