@@ -10,14 +10,15 @@ public:
     NumberAsString();
     NumberAsString(string str);
     ~NumberAsString();
-    void Set(string str);
+    void Set(string &str);
+    void Set(int num);
     void Sklon(int index, int currentTrio);
     void MakeString(string str, int digitCount, int index, int currentTrio);
     void ToString();
     void PrintString();
     void PrintInt();
 
-    string GetString();
+    string *GetString();
 
 private:
     int number = 0;
@@ -40,6 +41,6 @@ private:
             "", "сто ", "двести ", "триста ", "четыреста ", "пятьсот ", "шестьсот ", "семьсот ", "восемьсот ", "девятьсот "};
 };
 
-int main();
+string TestString();
 
 #endif

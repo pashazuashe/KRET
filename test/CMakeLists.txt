@@ -6,6 +6,7 @@ set(SourcesTest
     ExampleTests.cpp
 )
 
+#add_executable(KRET KRET.cpp)
 add_executable(ExampleTests ExampleTests.cpp)
 
 target_link_libraries(ExampleTests PUBLIC

@@ -15,6 +15,8 @@ NumberAsString::NumberAsString() {}
 
 NumberAsString::NumberAsString(string str)
 {
+	// setlocale(LC_ALL, "ru_RU.utf8");
+	// setlocale(LC_ALL, "RUSSIAN");
 	stringIn = str;
 	number = stoi(stringIn);
 	ToString(); // Запускаем преобразование в текст
@@ -24,10 +26,19 @@ NumberAsString::~NumberAsString()
 {
 }
 
-void NumberAsString::Set(string str) // Устанваливаем входную строку
+void NumberAsString::Set(string &str) // Устанваливаем входную строку
 {
+	// setlocale(LC_ALL, "Russian");
 	stringIn = str;
 	number = stoi(stringIn);
+	ToString(); // Запускаем преобразование в текст
+}
+
+void NumberAsString::Set(int num) // Устанваливаем входную строку
+{
+	// setlocale(LC_ALL, "Russian");
+	stringIn = to_string(number);
+	number = num;
 	ToString(); // Запускаем преобразование в текст
 }
 
@@ -242,10 +253,12 @@ void NumberAsString::PrintInt()
 	cout << number;
 }
 
-string NumberAsString::GetString()
+string *NumberAsString::GetString()
 {
-	return stringOut;
+
+	return &stringOut;
 }
+
 /*
 private:
 int number = 0;
@@ -269,7 +282,7 @@ const char sot[10][24] // сотни
 }
 ;
 */
-
+/*
 int main()
 {
 	setlocale(LC_ALL, "Russian");
@@ -325,4 +338,12 @@ int main()
 		}
 	}
 	return 0;
+}*/
+
+string TestString()
+{
+	// NumberAsString X;
+	// X.Set(str);
+
+	return string("абв"); // X.GetString();
 }

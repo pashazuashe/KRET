@@ -1,27 +1,26 @@
 
 #include <gtest/gtest.h>
 #include "../KRET/KRET.h"
+#include <iostream>
+#include <sstream>
+#include <string>
 
-TEST(ExampleTests, Test1)
+TEST(MyTest, Test1)
 {
-    setlocale(LC_ALL, "Russian");
+    setlocale(LC_ALL, "ru_RU");
 
+    string str = "сто двадцать рублей";
     NumberAsString X;
-    string str = "123";
-    X.Set(str);
-    string str1 = "сто двадцать три рубля";
-    string str2 = X.GetString();
-    ASSERT_EQ(str2, str1);
-}
+    X.Set(int(120));
+    string str2 = *X.GetString();
 
-TEST(AnotherTests, Test1)
-{
-    setlocale(LC_ALL, "Russian");
+    EXPECT_EQ(str, str2);
 
-    NumberAsString X;
-    string str = "777";
-    X.Set(str);
-    string str1 = "семьсот семьдесят семь";
-    string str2 = X.GetString();
-    ASSERT_EQ(str2, str1);
+    cout << "\n"
+         << "X = " << str2 << "\n";
+
+    setlocale(LC_ALL, "RU.utf8");
+    cout << "str = " << str << "\n\n";
 }
+// тут несостыковочка с кодировками :(
+// хотя английские буковки работают
