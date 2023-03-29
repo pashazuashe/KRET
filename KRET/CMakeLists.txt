@@ -1,9 +1,3 @@
-﻿# CMakeList.txt: проект CMake для KRET; включите исходный код и определения,
-# укажите здесь логику для конкретного проекта.
-#
-cmake_minimum_required (VERSION 3.22.1)
+﻿cmake_minimum_required(VERSION 3.22.1)
 
-# Добавьте источник в исполняемый файл этого проекта.
-add_executable (KRET "KRET.cpp" "KRET.h")
-
-# TODO: Добавьте тесты и целевые объекты, если это необходимо.
+add_library(KRET STATIC KRET.cpp KRET.h)
